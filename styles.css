@@ -2,8 +2,8 @@
 :root{
     --background-color:#0a3155;
     --text-color:#eeecd1;
-    --primary-color:#4b7d7c;
-    --secondary-color:#70cac9;
+    --primary-color:aqua;
+    --secondary-color:rgb(33, 219, 219);
     --accent-color:#bf3633;
     --gradient-color: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%); 
     --sans-font: 'Segoe UI', Tahoma, Verdana, sans-serif;
@@ -118,6 +118,7 @@ img{
 }
 
 .section{
+  padding: 2rem 0;
   margin-bottom: 2rem;
   counter-increment: section 1; /*info sobre counter en las notas del proyecto*/
 }
@@ -171,15 +172,14 @@ img{
 /*******SPINNER********/
 /*********************/
 .spinner {
-  width: 500px;
-  height: 450px;
+  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 98;
-  background-color:rgba(0,0,0,.5);
+  z-index: 100;
+  background-color:var(--background-color);
   animation-timeline:var(--gradient-color); 
 }
 
@@ -187,7 +187,6 @@ img{
   animation: spinners linear infinite;
   position: absolute;
   border: 5px solid transparent;
-  border-top-color: #F00;  
   border-radius: 50%;
 }
 
@@ -324,13 +323,6 @@ img{
 .navbar_item a:hover{
  color: var(--background-color);
 }
-
-/* .navbar_item a:before{
-  content: "<";
-}
-.navbar_item a:after{
-  content: ">";
-} */
 
 /*********************/
 /*****VIDEO FONDO*****/
@@ -470,12 +462,14 @@ img{
   justify-content: center;
   gap: .25rem;
   height: 90vh;
+  padding: 1.2rem;
 }
 
 
 .hero .hero_helloworld{
-  color: var(--accent-color);
+  color: var(--secondary-color);
   font-family: var(--mono-font);
+  font-size: 1.4rem;
 }
  
 .hero .hero_intro{
@@ -499,7 +493,7 @@ h2.hero_subtitle::after{
 h2.section_title::before,
 h2.section_title::after{
   font-size: 1.3rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 h2.section_title::before{
@@ -509,8 +503,6 @@ h2.section_title::before{
 h2.section_title::after{
   content: ">";
 }
-
-
 
 /*********************/
 /***SOBRE MÍ SECTION**/
@@ -525,10 +517,7 @@ h2.section_title::after{
 }
 
 .about_box-container{
-  /* display: flex; */
   display: grid;  
-  /* grid-template-columns: 50% 50% */
-  /* grid-template-columns: 1fr 1fr; */
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 2rem 0;
@@ -616,7 +605,6 @@ h2.section_title::after{
 	transform: scale(1.1);
 }
 
-
 .portfolio_title{
   color: var(--primary-color); 
   margin-bottom: .5rem;
@@ -639,7 +627,6 @@ h2.section_title::after{
   font-size: 1rem;
   transition: var(--transition);
 }
-
 
 /*********************/
 /***CONTACT SECTION***/
@@ -850,7 +837,7 @@ input[type=text], input[type=email], textarea {
   }
 
   .hero .hero_helloworld{
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   h2.hero_subtitle{
     font-size: 2.8rem;
